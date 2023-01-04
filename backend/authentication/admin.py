@@ -28,6 +28,8 @@ class UserModel(UserAdmin):
 
 
 admin.site.register(CustomUser,UserModel)
+# admin.site.register(CustomUser)
+
 admin.site.register(Teacher)
 admin.site.register(Student)
 admin.site.register(Admin)
