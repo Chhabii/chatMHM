@@ -1,0 +1,18 @@
+FROM python:3.8
+
+# copy the Django project files into the Docker image
+COPY . /app
+
+# set the working directory to the Django project
+WORKDIR /app/
+
+# install the requirements
+RUN pip install -r /app/requirements.txt
+
+# set the environment variables
+ENV DJANGO_SETTINGS_MODULE=MHM.settings
+ENV PYTHONPATH=/app
+
+# run the Django development server
+
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
